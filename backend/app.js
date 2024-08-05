@@ -1,20 +1,21 @@
 import express from "express";
-import { connectDB } from "./database/dbconfig.js";
+import { dbConnection } from "./database/dbConnection.js";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import fileUpload from "express-fileupload";
 import { errorMiddleware } from "./middlewares/error.js";
-import messageRouter from "./routes/messageRouter.js";
-import userRouter from "./routes/userRouter.js";
-// import appointmentRouter from "./router/appointmentRouter.js";
+import messageRouter from "./router/messageRouter.js";
+import userRouter from "./router/userRouter.js";
+import appointmentRouter from "./router/appointmentRouter.js";
 
 const app = express();
 config({ path: "./config.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL_ONE, process.env.FRONTEND_URL_TWO],
+    // origin: "*", // Allow requests from any origin
+    origin: [process.env.FRONTEND_URL_ONE],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
@@ -32,9 +33,9 @@ app.use(
 );
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
-// app.use("/api/v1/appointment", appointmentRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
-connectDB();
+dbConnection();
 
 app.use(errorMiddleware);
 export default app;
