@@ -32,12 +32,7 @@ const userSchema = new mongoose.Schema({
     maxlength: [10, "Phone number cannot exceed 10 characters"],
     minlength: [10, "Phone number should have atleast 10 characters"],
   },
-  nic: {
-    type: String,
-    required: [true, "Please enter your message"],
-    maxlength: [13, "Nic cannot exceed 13 characters"],
-    minlength: [13, "Nic should have atleast  13 characters"],
-  },
+
   dob: {
     type: Date,
     required: [true, "Please enter your dob"],

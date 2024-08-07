@@ -12,14 +12,31 @@ import appointmentRouter from "./router/appointmentRouter.js";
 const app = express();
 config({ path: "./config.env" });
 
-app.use(
-  cors({
-    // origin: "*", // Allow requests from any origin
-    origin: [process.env.FRONTEND_URL_ONE],
-    method: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [process.env.FRONTEND_URL_ONE, process.env.FRONTEND_URL_TWO],
+//     method: ["GET", "POST", "DELETE", "PUT"],
+//     credentials: true,
+//   })
+// );
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    "http://localhost:5173",
+    // Add any other allowed origins here
+  ];
+
+  if (allowedOrigins.includes(req.headers.origin)) {
+    res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
+  } else {
+    res.setHeader("Access-Control-Allow-Origin", "null");
+  }
+
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+
+  next();
+});
 
 app.use(cookieParser());
 app.use(express.json());
