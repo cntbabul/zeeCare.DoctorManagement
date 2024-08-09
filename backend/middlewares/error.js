@@ -9,9 +9,8 @@ export const errorMiddleware = (err, req, res, next) => {
   err.message = err.message || "Internal Server Error";
   err.statusCode = err.statusCode || 500;
 
-  // If the error code is 11000, it means that the MongoDB's unique index constraint has been violated. This means that the user is trying to insert a document with a field that already exists in the database. In this case, we create a new error object with a message indicating which field is duplicated and set the status code to 400 (Bad Request).
   if (err.code === 11000) {
-    const key = Object.keys(err.keyValue)[0]; // Object.keys(err.keyValue) returns an array with the names of the fields that violated the unique index constraint. We take the first element of this array and assign it to the "key" variable.
+    const key = Object.keys(err.keyValue)[0];
     const message = `Duplicate ${key} entered`,
       err = new ErrorHandler(message, 400);
   }

@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
     required: [true, "Please enter your gender"],
-    enum: ["male", "female", "other"],
+    enum: ["Male", "Female", "other"],
   },
   password: {
     type: String,

@@ -38,7 +38,6 @@ const AddNewAdmin = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-
           setDob("");
           setGender("");
           setPassword("");

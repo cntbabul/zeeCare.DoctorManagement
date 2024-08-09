@@ -17,7 +17,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/admin/login",
+          "http://localhost:4000/api/v1/user/login",
           { email, password, role: "Admin" },
           {
             withCredentials: true,
@@ -40,9 +40,9 @@ const Login = () => {
     }
   };
 
-  if (isAuthenticated) {
-    return <Navigate to={"/"} />;
-  }
+  // if (isAuthenticated) {
+  //   return <Navigate to={"/"} />;
+  // }
 
   return (
     <>

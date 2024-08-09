@@ -23,32 +23,17 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "*",
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "http://localhost:4000",
+    ],
     method: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
     optionsSuccessStatus: 200,
   })
 );
-
-// app.use((req, res, next) => {
-//   const allowedOrigins = [
-//     "http://localhost:5173",
-//     "http://localhost:5174",
-//     // Add any other allowed origins here
-//   ];
-
-//   if (allowedOrigins.includes(req.headers.origin)) {
-//     res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
-//   } else {
-//     res.setHeader("Access-Control-Allow-Origin", "null");
-//   }
-
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-
-//   next();
-// });
 
 app.use(
   fileUpload({

@@ -52,11 +52,11 @@ const AddNewDoctor = () => {
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("password", password);
-      formData.append("nic", nic);
       formData.append("dob", dob);
       formData.append("gender", gender);
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
+      // formData.append("role", "Doctor");
       await axios
         .post("http://localhost:4000/api/v1/user/doctor/addnew", formData, {
           withCredentials: true,
