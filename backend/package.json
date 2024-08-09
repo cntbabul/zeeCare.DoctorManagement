@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "client": "npm run dev --prefix  ../frontend",
+    "dashboard": "npm run dev --prefix ../dashboard",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "concurrently \"npm run start\" \"npm run client\" \"npm run dashboard\""
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.4.0",
+    "colors": "^1.4.0",
     "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

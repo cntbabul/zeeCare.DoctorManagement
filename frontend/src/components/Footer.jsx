@@ -43,7 +43,7 @@ const Footer = () => {
 
         <div className="content">
           <div>
-            <img src="../../public/logo.png" alt="logo-img" width={200} />
+            <img src="./logo.png" alt="logo-img" width={200} />
           </div>
           <div>
             <h4>Quick Links</h4>
@@ -62,7 +62,7 @@ const Footer = () => {
           <div>
             <h4>Hours</h4>
 
-            <li>
+            <ol>
               {hours.map((e) => {
                 return (
                   <li key={e.id}>
@@ -71,7 +71,7 @@ const Footer = () => {
                   </li>
                 );
               })}
-            </li>
+            </ol>
           </div>
           <div>
             <h4>Contact</h4>

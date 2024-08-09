@@ -7,7 +7,7 @@ const AboutUs = () => {
     <>
       <Hero
         title={"Welcome to ZeeCare Clinic | Your Trusted Caregiver"}
-        imageUrl={"../../public/about.png"}
+        imageUrl={"./about.png"}
       />
       <Biography imageUrl={"../../public/whoweare.png"} />
     </>

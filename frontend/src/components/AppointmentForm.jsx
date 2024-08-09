@@ -19,12 +19,11 @@ const AppointmentForm = () => {
 
   const navigateTo = useNavigate();
 
-  const [doctors, setDoctors] = useState([]); // Initialize doctors state variable
-
   const departmentsArray = [
     "Cardiology",
     "Dermatology",
     "ENT",
+    "Oncology",
     "General",
     "Gynaecology",
     "Neurology",
@@ -34,11 +33,11 @@ const AppointmentForm = () => {
     "Radiology",
     "Urology",
   ];
-
+  const [doctors, setDoctors] = useState([]); // Initialize doctors state variable
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const data = await axios.get(
+        const { data } = await axios.get(
           "http://localhost:4000/api/v1/user/doctors",
           { withCredentials: true }
         );
@@ -82,9 +81,18 @@ const AppointmentForm = () => {
         }
       );
       toast.success(data.message);
-      navigateTo("/");
-
-      console.log(data);
+      setFirstName(""),
+        setLastName(""),
+        setEmail(""),
+        setPhone(""),
+        setDob(""),
+        setGender(""),
+        setAppointmentDate(""),
+        setDepartment(""),
+        setDoctorFirstName(""),
+        setDoctorLastName(""),
+        setHasVisited(""),
+        setAddress("");
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);

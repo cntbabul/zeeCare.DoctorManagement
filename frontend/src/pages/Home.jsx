@@ -9,9 +9,9 @@ const Home = () => {
     <>
       <Hero
         title={"Welcome to ZeeCare Clinic | Your Trusted Caregiver"}
-        imageUrl={"../../public/hero.png"}
+        imageUrl={"./hero.png"}
       />
-      <Biography imageUrl={"../../public/about.png"} />
+      <Biography imageUrl={"./about.png"} />
       <Departments />
       <MessageForm />
     </>
