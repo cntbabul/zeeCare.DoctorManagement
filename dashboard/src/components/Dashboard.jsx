@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useNavigate } from "react";
 import { Context } from "../main";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const { isAuthenticated, admin } = useContext(Context);
   if (!isAuthenticated) {
-    return <Navigate to={"/login"} />;
+    // return <Navigate to={"/login"} />;
   }
 
   return (
@@ -58,8 +58,9 @@ const Dashboard = () => {
             <div className="content">
               <div>
                 <p>Hello ,</p>
-                <h5>{admin && `${admin.firstName} ${admin.lastName}`} </h5>
+                <h5>{admin && `${admin.firstName} ${admin.lastName} `} </h5>
               </div>
+
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
