@@ -15,6 +15,7 @@ const Sidebar = () => {
   const [show, setShow] = useState(false);
 
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  console.log(isAuthenticated);
 
   const handleLogout = async () => {
     await axios
