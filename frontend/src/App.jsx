@@ -24,6 +24,7 @@ function App() {
           "http://localhost:4000/api/v1/user/patient/me",
           { withCredentials: true }
         );
+        console.log(response.data.user);
 
         setIsAuthenticated(true);
         setUser(response.data.user);

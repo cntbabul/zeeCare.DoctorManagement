@@ -133,17 +133,17 @@ h6 {
     font-size: 32px;
   }
 }
-@media (max-width: 1085px) {
+media (max-width: 1085px) {
   .hero .banner span {
     right: -480px;
     top: -315px;
   }
 }
-@media (max-width: 925px) {
+media (max-width: 925px) {
   .hero {
     flex-direction: column;
   }
-  @media (max-width: 700px) {
+  media (max-width: 700px) {
     .hero {
       padding-bottom: 40px;
     }
@@ -227,7 +227,7 @@ h6 {
 .register-form h2 {
   color: #000;
 }
-@media (max-width: 1110px) {
+media (max-width: 1110px) {
   .appointment-form form div:nth-child(4) {
     flex-direction: column;
   }
@@ -235,7 +235,7 @@ h6 {
     flex-direction: column;
   }
 }
-@media (max-width: 888px) {
+media (max-width: 888px) {
   .form-component {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -244,7 +244,7 @@ h6 {
     flex-direction: column;
   }
 }
-@media (max-width: 667px) {
+media (max-width: 667px) {
   .form-component form input,
   .form-component form select,
   .form-component form textarea {
@@ -278,7 +278,7 @@ h6 {
   font-size: 24px;
   letter-spacing: 2px;
 }
-@media (max-width: 925px) {
+media (max-width: 925px) {
   .biography {
     flex-direction: column-reverse;
   }
@@ -298,7 +298,7 @@ h6 {
   height: 600px;
   z-index: -1;
 }
-@media (max-width: 700px) {
+media (max-width: 700px) {
   .message-form img {
     right: -35%;
     height: 450px;
@@ -355,7 +355,7 @@ footer .content div:last-child div {
 footer .content div:last-child div svg {
   font-size: 24px;
 }
-@media (max-width: 1135px) {
+media (max-width: 1135px) {
   footer .content {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -367,7 +367,7 @@ footer .content div:last-child div svg {
     margin-bottom: 30px;
   }
 }
-@media (max-width: 900px) {
+media (max-width: 900px) {
   footer {
     padding-bottom: 0 !important;
   }
@@ -376,7 +376,7 @@ footer .content div:last-child div svg {
     width: 100%;
   }
 }
-@media (max-width: 390px) {
+media (max-width: 390px) {
   footer .content div:nth-child(3) ul li {
     display: flex;
     flex-direction: column;
@@ -494,13 +494,13 @@ nav .hamburger {
 nav svg {
   font-size: 1.75rem;
 }
-@media (max-width: 1520px) {
+media (max-width: 1520px) {
   nav {
     min-width: 100%;
     padding: 25px 20px 40px 20px;
   }
 }
-@media (max-width: 800px) {
+media (max-width: 800px) {
   nav {
     background: #ffffffbf;
     position: fixed;
@@ -549,19 +549,19 @@ nav svg {
     margin-top: 20px;
   }
 }
-@media (max-width: 800px) {
+media (max-width: 800px) {
   nav .showmenu {
     width: 96vw;
   }
 }
-@media (max-width: 650px) {
+media (max-width: 650px) {
   nav .showmenu {
     margin: 0;
     width: 100%;
     border-radius: 0;
   }
 }
-@media (max-width: 555px) {
+media (max-width: 555px) {
   nav {
     background: #fff;
   }
